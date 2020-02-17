@@ -1,7 +1,19 @@
 <div>
   <div>
-    <span>{{current.name}}</span>
-    <br>
-    {{current.summary}}
+    <h2>{{current.name}}</h2>
+    <div>
+      <img class="show-img" [src]='current.image'/>
+    </div>
+    <div>
+      <p>{{current.summary}}</p>
+      <h3>Show info</h3>
+      <ul>
+        <li>Language: {{current.language}}</li>
+        <li>Runtime: {{current.runtime}} minutes</li>
+        <li>Premiered: {{current.premiered}}</li>
+        <li>Status: {{current.status}}</li>
+        
+      </ul>
+    </div>
   </div>
 </div>
