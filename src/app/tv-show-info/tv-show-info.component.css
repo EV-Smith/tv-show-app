@@ -1,5 +1,13 @@
+.show-comp {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: .7em;
+  margin: 2% 3%;
+  width: 60%;
+}
+
 .show-img {
-  width: 15%;
+  width: 20%;
   float: left;
   margin-right: 1em;
 }
@@ -15,7 +23,7 @@ p {
 li {
   width: 50%;
   list-style: none;
-  font-size: 16px;
+  font-size: .9em;
   font-weight: 400;
   font-family: sans-serif;
   padding-bottom: .7em;

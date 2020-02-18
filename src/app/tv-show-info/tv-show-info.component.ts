@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ITvShowInfo } from '../itv-show-info';
+import { ITvShowData } from '../itv-show-data';
+import { TvShowInfoService } from '../tv-show-info.service';
 
 @Component({
   selector: 'app-tv-show-info',
@@ -7,21 +8,13 @@ import { ITvShowInfo } from '../itv-show-info';
   styleUrls: ['./tv-show-info.component.css']
 })
 export class TvShowInfoComponent implements OnInit {
-  current: ITvShowInfo
-  constructor() { 
-    this.current = {
-      image: 'http://static.tvmaze.com/uploads/images/original_untouched/207/519371.jpg',
-      name: 'The Good Place',
-      language: 'Enlgish',
-      genres: 'Comedy, Fantasy, Supernatural',
-      runtime: 30,
-      premiered: '2016-09-19',
-      status: 'Ended',
-      summary: 'The Good Place is a smart, unique comedy about what makes a good person. The show follows Eleanor Shellstrop, an ordinary woman who enters the afterlife and, thanks to some kind of error, is sent to the Good Place instead of the Bad Place, which is definitely where she belongs. While hiding in plain sight from Michael, the wise architect of the Good Place (who doesn\'t know he\'s made a mistake), she\'s determined to shed her old way of living and discover the awesome (or, at least, the pretty good) person within.'
-    } as ITvShowInfo
+  current: ITvShowData
+  constructor(private tvShowInfoService: TvShowInfoService) { 
+
   }
     
-  ngOnInit(): void {
+  ngOnInit() {
+    this.tvShowInfoService.getTVShow('the-good-place').subscribe(data => this.current = data)
   }
 
 }
