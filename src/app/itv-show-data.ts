@@ -1,10 +1,11 @@
 export interface ITvShowData {
   image: {
+    medium: string,
     original: string
   },
   name: string,
   language: string,
-  genres: string,
+  genres: Array<string>,
   runtime: number,
   premiered: string,
   status: string,

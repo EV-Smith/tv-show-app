@@ -1,18 +1,18 @@
-<div class="show-comp">
+<div *ngIf="current" class="show-comp">
   <div>
     <h2>{{current.name}}</h2>
     <div>
-      <img class="show-img" [src]='current.original'/>
+      <img class="show-img" [src]='current.image'/>
     </div>
     <div>
-      <div>{{current.summary}}</div>
-      <h3>Show info</h3>
+      <div [innerHTML]="current.summary"></div>
+      <h3>Show Details</h3>
       <ul>
-        <li>Language: {{current.language}}</li>
-        <li>Runtime: {{current.runtime}} minutes</li>
         <li>Premiered: {{current.premiered}}</li>
         <li>Status: {{current.status}}</li>
-        
+        <li>Schedule: {{current.days}}s at {{current.time}} ({{current.runtime}} minutes)</li>
+        <li>Genres: {{current.genres.join(' | ')}}</li>
+        <li>Language: {{current.language}}</li>
       </ul>
     </div>
   </div>

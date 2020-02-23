@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ITvShowData } from '../itv-show-data';
+import { ITvShowInfo } from '../itv-show-info';
 import { TvShowInfoService } from '../tv-show-info.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { TvShowInfoService } from '../tv-show-info.service';
   styleUrls: ['./tv-show-info.component.css']
 })
 export class TvShowInfoComponent implements OnInit {
-  current: ITvShowData
+  current: ITvShowInfo
   constructor(private tvShowInfoService: TvShowInfoService) { 
 
   }
