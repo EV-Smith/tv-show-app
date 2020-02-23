@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { TvShowInfoComponent } from './tv-show-info/tv-show-info.component';
+import { DisplayShowsInfoComponent } from './display-shows-info/display-shows-info.component';
 import { ShowSearchComponent } from './show-search/show-search.component';
-import { TvShowInfoService } from './tv-show-info.service';
+import { DisplayShowsService } from './display-shows.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
@@ -18,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    TvShowInfoComponent,
+    DisplayShowsInfoComponent,
     ShowSearchComponent
   ],
   imports: [
@@ -34,7 +34,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [TvShowInfoService],
+  providers: [DisplayShowsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

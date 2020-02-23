@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
-import { TvShowInfoService } from '../tv-show-info.service';
+import { DisplayShowsService } from '../display-shows.service';
 
 @Component({
   selector: 'app-show-search',
@@ -13,7 +13,7 @@ export class ShowSearchComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
 
   search = new FormControl('', [Validators.minLength(1)]);
-  constructor(private tvShowInfoService: TvShowInfoService) { }
+  constructor(private displayShowsService: DisplayShowsService) { }
 
   ngOnInit() {
     this.search.valueChanges

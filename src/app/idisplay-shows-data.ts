@@ -1,4 +1,4 @@
-export interface ITvShowData {
+export interface IDislayShowsData {
   image: {
     medium: string,
     original: string

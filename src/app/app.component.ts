@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ITvShowInfo } from './itv-show-info';
-import { TvShowInfoService } from './tv-show-info.service';
+import { IDisplayShows } from './idisplay-shows';
+import { DisplayShowsService } from './display-shows.service';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,13 @@ import { TvShowInfoService } from './tv-show-info.service';
 export class AppComponent {
   title = 'TV Search';
 
-  currentShowSearch: ITvShowInfo;
+  currentShowSearch: IDisplayShows;
 
-  constructor(private tvShowInfoService: TvShowInfoService){}
+  constructor(private displayShowsService: DisplayShowsService){}
 
   doSearch(searchValue){
   const userInput = searchValue;
-    this.tvShowInfoService.getTVShow(userInput).subscribe 
+    this.displayShowsService.getTVShow(userInput).subscribe 
       (data => this.currentShowSearch = data);
   } 
 }

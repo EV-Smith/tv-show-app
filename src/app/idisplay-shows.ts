@@ -1,4 +1,4 @@
-export interface ITvShowInfo {
+export interface IDisplayShows {
   image: string,
   name: string,
   language: string,
