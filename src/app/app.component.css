@@ -1,4 +1,22 @@
-.tagline {
-  padding-top: .5rem;
+.toolbar {
+  background-color: #2e2e2e;
+  color: #ffffff;
+  margin-top: 0;
+  padding: 5px 30px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 15px 0 10px 0;
+  margin: 0;
+}
+
+h2.tagline {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0 0 15px 0;
   font-style: italic;
+  margin: 0;
 }

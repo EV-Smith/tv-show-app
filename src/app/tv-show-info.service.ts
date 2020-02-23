@@ -13,9 +13,11 @@ export class TvShowInfoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getTVShow(name: string): Observable<ITvShowInfo>{
+  getTVShow(searchText: string): Observable<ITvShowInfo>{
+    let uriParams = `${searchText}`;
+
     return this.httpClient.get<ITvShowData>(
-      `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${name}&appid=${environment.appID}`
+      `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${uriParams}&appid=${environment.appID}`
     ).pipe(map(data => this.transformToITvShowData(data)))
   }
   private transformToITvShowData(data: ITvShowData) : ITvShowInfo{

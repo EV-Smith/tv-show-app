@@ -1,12 +1,13 @@
 <div>
-  <mat-toolbar color="primary">
-    TV Show Search
-  </mat-toolbar>
-  <div class="tagline">Never miss your favorite shows!</div>
+  <div class="toolbar">
+    <h1>TV Show Search</h1>
+    <h2 class="tagline">Never miss your favorite shows!</h2>
+  </div>
+  
   <div>
-    <app-show-search></app-show-search>
+    <app-show-search (searchEvent)="doSearch($event)"></app-show-search>
   </div>
   <div>
-    <app-tv-show-info></app-tv-show-info>
+    <app-tv-show-info [current]="currentShowSearch"></app-tv-show-info>
   </div>
 </div>
