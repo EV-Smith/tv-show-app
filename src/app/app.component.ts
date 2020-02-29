@@ -10,7 +10,7 @@ import { DisplayShowsService } from './display-shows.service';
 export class AppComponent {
   title = 'TV Search';
 
-  currentShowSearch: IDisplayShows;
+  currentShowSearch: IDisplayShows[];
 
   constructor(private displayShowsService: DisplayShowsService){}
 

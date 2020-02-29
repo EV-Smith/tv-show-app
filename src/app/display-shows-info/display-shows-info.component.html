@@ -1,18 +1,18 @@
 <div *ngIf="current" class="show-comp">
   <div>
-    <h2>{{current.name}}</h2>
+    <h2>{{current.show.name}}</h2>
     <div>
-      <img class="show-img" [src]='current.image'/>
+      <img class="show-img" [src]='current.show.image'/>
     </div>
     <div>
-      <div [innerHTML]="current.summary"></div>
+      <div [innerHTML]="current.show.summary"></div>
       <h3>Show Details</h3>
       <ul>
-        <li>Premiered: {{current.premiered}}</li>
-        <li>Status: {{current.status}}</li>
-        <li>Schedule: {{current.days}}s at {{current.time}} ({{current.runtime}} minutes)</li>
-        <li>Genres: {{current.genres.join(' | ')}}</li>
-        <li>Language: {{current.language}}</li>
+        <li>Premiered: {{current.show.premiered}}</li>
+        <li>Status: {{current.show.status}}</li>
+        <li>Schedule: {{current.show.days}}s at {{current.show.time}} ({{current.show.runtime}} minutes)</li>
+        <li>Genres: {{current.show.genres.join(' | ')}}</li>
+        <li>Language: {{current.show.language}}</li>
       </ul>
     </div>
   </div>

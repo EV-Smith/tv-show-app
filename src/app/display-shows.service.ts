@@ -13,25 +13,33 @@ export class DisplayShowsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getTVShow(searchText: string): Observable<IDisplayShows>{
+  getTVShow(searchText: string): Observable<IDisplayShows[]>{
     let uriParams = `${searchText}`;
 
-    return this.httpClient.get<IDislayShowsData>(
-      `${environment.baseUrl}api.tvmaze.com/singlesearch/shows?q=${uriParams}&appid=${environment.appID}`
+    return this.httpClient.get<IDislayShowsData[]>(
+      `${environment.baseUrl}api.tvmaze.com/search/shows?q=${uriParams}&appid=${environment.appID}`
     ).pipe(map(data => this.transformToITvShowData(data)))
   }
-  private transformToITvShowData(data: IDislayShowsData) : IDisplayShows{
-    return {
-      image: data.image.original,
-      name: data.name,
-      language: data.language,
-      genres: data.genres,
-      runtime: data.runtime,
-      premiered: data.premiered,
-      status: data.status,
-      summary: data.summary,
-      time: data.schedule.time,
-      days: data.schedule.days,
+
+  private transformToITvShowData(data: IDislayShowsData[]) : IDisplayShows[]{
+    
+    let array = new Array();
+    for (let i = 0; i < data.length; i++){
+      
+      array.push(new Object({
+        image: data[i].show.image.original,
+        name: data[i].show.name,
+        language: data[i].show.language,
+        genres: data[i].show.genres,
+        runtime: data[i].show.runtime,
+        premiered: data[i].show.premiered,
+        status: data[i].show.status,
+        summary: data[i].show.summary,
+        time: data[i].show.schedule.time,
+        days: data[i].show.schedule.days
+      }))
+
+      return (array)
     }
   }
 }
