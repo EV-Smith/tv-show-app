@@ -10,11 +10,11 @@
         <div [innerHTML]="curr.summary"></div>
         <h3>Show Details</h3>
         <ul>
-          <li>Premiered: {{curr.premiered}}</li>
-          <li>Status: {{curr.status}}</li>
-          <li>Schedule: {{curr.days}}s at {{curr.time}} ({{curr.runtime}} minutes)</li>
-          <li>Genres: {{curr.genres}}</li>
-          <li>Language: {{curr.language}}</li>
+          <li><strong>Premiered:</strong> {{curr.premiered}}</li>
+          <li><strong>Status:</strong> {{curr.status}}</li>
+          <li><strong>Schedule:</strong> {{curr.days}}s at {{curr.time}} ({{curr.runtime}} minutes)</li>
+          <li><strong>Genres:</strong> {{curr.genres.join(' | ')}}</li>
+          <li><strong>Language:</strong> {{curr.language}}</li>
         </ul>
       </div>
     </div>
