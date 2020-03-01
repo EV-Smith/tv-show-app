@@ -5,19 +5,20 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { IDisplayShows } from './idisplay-shows';
+import { IDisplayShowsService } from './idisplay-shows-service'
 
 @Injectable({
   providedIn: 'root'
 })
-export class DisplayShowsService {
+export class DisplayShowsService implements IDisplayShowsService{
 
   constructor(private httpClient: HttpClient) { }
 
   getTVShow(searchText: string): Observable<IDisplayShows[]>{
-    let uriParams = `${searchText}`;
+
 
     return this.httpClient.get<IDislayShowsData[]>(
-      `${environment.baseUrl}api.tvmaze.com/search/shows?q=${uriParams}&appid=${environment.appID}`
+      `${environment.baseUrl}api.tvmaze.com/search/shows?q=${searchText}&appid=${environment.appID}`
     ).pipe(map(data => this.transformToITvShowData(data)))
   }
 
@@ -39,7 +40,6 @@ export class DisplayShowsService {
         days: data[i].show.schedule.days
       }))
 
-      return (array)
-    }
+    } return array;
   }
 }

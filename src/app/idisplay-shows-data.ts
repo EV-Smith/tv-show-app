@@ -6,14 +6,14 @@ export interface IDislayShowsData {
     },
     name: string,
     language: string,
-    genres: Array<string>,
+    genres: [string],
     runtime: number,
     premiered: string,
     status: string,
     summary: string,
     schedule: {
       time: string,
-      days: string
+      days: [string]
     },
   }
 }
